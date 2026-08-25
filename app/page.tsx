@@ -2,7 +2,7 @@ const stats = [
   { value: '61', label: 'languages' },
   { value: '163,138', label: 'benchmark items' },
   { value: '2,926', label: 'expert-verified Gold' },
-  { value: '62.5%', label: 'best model on Gold' },
+  { value: '62.5%', label: 'top reported Gold score' },
 ];
 
 const pipeline = [
@@ -79,8 +79,8 @@ export default function Home() {
           <h1>Think you’ve solved commonsense reasoning?</h1>
           <p className="hero-kicker">Try <em>HellaSwagUltra.</em></p>
           <p className="hero-deck">
-            61 languages. Local cultural knowledge. Subtle violations that expose
-            what today’s strongest language models still miss.
+            61 languages. Local cultural knowledge. Subtle violations that reveal
+            gaps in multilingual language understanding.
           </p>
           <div className="hero-actions">
             <a className="button button-primary" href="https://github.com/aialt/hellaswagultra" target="_blank" rel="noreferrer">
@@ -212,13 +212,6 @@ export default function Home() {
           </article>
         </div>
 
-        <figure className="paper-figure overview-figure">
-          <div className="figure-tag">Figure 1 · Why Ultra?</div>
-          <img src="/figures/overview.png" alt="Comparison of HellaSwag, complex commonsense tasks, and multilingual HellaSwagUltra examples" loading="lazy" />
-          <figcaption>
-            Natural continuation, multilingual grounding, and distractors that fail only when the hidden facts are understood.
-          </figcaption>
-        </figure>
       </section>
 
       <section className="method-section" id="method">
@@ -238,10 +231,6 @@ export default function Home() {
             ))}
           </div>
 
-          <figure className="paper-figure pipeline-figure">
-            <div className="figure-tag">Figure 2 · Automated construction</div>
-            <img src="/figures/pipeline.png" alt="HellaSwagUltra data pipeline from Wiki filtering through commonsense generation to contexts and continuations" loading="lazy" />
-          </figure>
         </div>
       </section>
 
@@ -266,11 +255,11 @@ export default function Home() {
         <div className="section-heading split-heading results-heading">
           <div>
             <p className="section-index">03 · Results on Gold</p>
-            <h2>The strongest model<br/>still gets <em>more than 1 in 3 wrong.</em></h2>
+            <h2>The top model reported<br/>still gets <em>more than 1 in 3 wrong.</em></h2>
           </div>
           <div className="result-callout">
             <strong>62.53%</strong>
-            <span>best model accuracy on the human-verified subset</span>
+            <span>top accuracy among models evaluated in the paper</span>
           </div>
         </div>
 

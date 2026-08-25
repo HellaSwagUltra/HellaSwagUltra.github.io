@@ -23,9 +23,12 @@ for text_file in "$output_dir"/*.txt; do
   cp "$text_file" "$project_dir/"
 done
 
-mkdir -p "$project_dir/_next" "$project_dir/_not-found" "$project_dir/figures"
+mkdir -p "$project_dir/_next" "$project_dir/_not-found"
 rsync -a --delete "$output_dir/_next/" "$project_dir/_next/"
 rsync -a --delete "$output_dir/_not-found/" "$project_dir/_not-found/"
-rsync -a --delete "$output_dir/figures/" "$project_dir/figures/"
+if [[ -d "$output_dir/figures" ]]; then
+  mkdir -p "$project_dir/figures"
+  rsync -a --delete "$output_dir/figures/" "$project_dir/figures/"
+fi
 
 echo "GitHub Pages export synced to the repository root."
