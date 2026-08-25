@@ -326,11 +326,12 @@ export default function Home() {
           </div>
           <details className="citation-details">
             <summary>BibTeX citation</summary>
-            <pre>{`@article{han2026hellaswagultra,
+            <pre>{`@inproceedings{han2026hellaswagultra,
   title={Think you have Solved Commonsense Reasoning? Try HellaSwagUltra},
   author={Han, Wenhan and Zhang, Yifan and Liu, Binbin and Pechenizkiy, Mykola and Zheng, Yin and Fang, Meng},
+  booktitle={Findings of the Association for Computational Linguistics: EMNLP 2026},
   year={2026},
-  url={https://github.com/aialt/hellaswagultra}
+  url={https://hellaswagultra.github.io/}
 }`}</pre>
           </details>
         </div>
