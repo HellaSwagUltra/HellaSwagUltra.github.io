@@ -15,4 +15,15 @@ npm run dev
 npm run build
 ```
 
+## GitHub Pages
+
+Generate the static export and sync it to the repository root before pushing:
+
+```bash
+npm run prepare:pages
+git add .
+git commit -m "Update GitHub Pages"
+git push origin main
+```
+
 Dataset and pipeline: <https://github.com/aialt/hellaswagultra>
