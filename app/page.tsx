@@ -92,23 +92,82 @@ export default function Home() {
           </div>
         </div>
 
-        <article className="sample-card" aria-label="Simplified benchmark example">
+        <article className="sample-card" id="local-example" aria-labelledby="local-example-title">
           <div className="sample-topline">
-            <span>Illustrative item · EN</span>
-            <span className="sample-number">Two hidden facts</span>
+            <span><b>ZH</b> · Local commonsense · China high-speed rail</span>
+            <span className="sample-number">Paper example · 1 of 4</span>
           </div>
           <p className="sample-label">Choose the most plausible continuation</p>
-          <p className="sample-context">
-            Leo microwaves leftovers with a metal fork, then puts a whole egg into
-            the empty microwave and sets it for two minutes. Next…
+          <h2 className="sample-title" id="local-example-title">Arrival at 10:30</h2>
+          <p className="sample-context-zh" lang="zh-CN">
+            林悦紧锁眉头，指尖在手机屏幕上划过，对身旁几次欲言又止的陈默置若罔闻。他脚边的礼品袋随着车厢的轻微震动而摇晃。陈默拿出手机，点开那两张电子车票，再次确认了“预定到站时间：上午10点30分”的字样。他收起手机，目光无意识地落在了车厢前方的电子显示屏上，上面滚动的实时时速数字刚刚跳过300。
           </p>
-          <div className="sample-options">
-            <div><span>A</span> A loud pop erupts from inside the microwave.</div>
-            <div><span>B</span> The egg comes out firm while the fork produces no sparks.</div>
-          </div>
+          <p className="sample-context">
+            Lin Yue’s brows were tightly furrowed, her fingertips sliding across the
+            screen of her phone, ignoring Chen Mo’s several attempts to speak. The
+            gift bag at his feet swayed slightly with the faint vibration of the
+            carriage. Chen Mo checked their two e-tickets again: “Scheduled arrival
+            time: 10:30 a.m.” His gaze drifted to the front display, where the
+            scrolling real-time speed had just passed 300 km/h.
+          </p>
+          <fieldset className="sample-options">
+            <legend>Four complete candidate continuations</legend>
+            <label className="sample-option">
+              <input type="radio" name="local-example-answer" value="A" />
+              <span className="option-letter">A</span>
+              <span className="option-copy">
+                The carriage broadcast began announcing the arrival information,
+                and the display changed to 10:30 a.m. The train glided smoothly into
+                the station; only when it came to a complete stop did the surface of
+                the half-full bottle beside him ripple slightly.
+              </span>
+            </label>
+            <label className="sample-option">
+              <input type="radio" name="local-example-answer" value="B" />
+              <span className="option-letter">B</span>
+              <span className="option-copy">
+                The train began to slow, but the full paper cup beside Lin Yue’s
+                phone remained perfectly still. As they entered the platform, an
+                opposite display showed that a train scheduled to depart at 10:40
+                had already “Departed.”
+              </span>
+            </label>
+            <label className="sample-option">
+              <input type="radio" name="local-example-answer" value="C" />
+              <span className="option-letter">C</span>
+              <span className="option-copy">
+                A rhythmic “clack-clack” echoed through the carriage. The front
+                display changed to 10:30 a.m., the arrival announcement began, and
+                the train glided into the platform at the same time.
+              </span>
+            </label>
+            <label className="sample-option">
+              <input type="radio" name="local-example-answer" value="D" />
+              <span className="option-letter">D</span>
+              <span className="option-copy">
+                A periodic “clack-clack” echoed through the carriage. As the train
+                slowed into the platform, they stepped out to find the opposite
+                track empty and an electronic sign displaying “10:40” just going
+                dark.
+              </span>
+            </label>
+          </fieldset>
           <details className="sample-answer">
-            <summary>Reveal the hidden commonsense</summary>
-            <p>Metal sparks in a microwave. A whole egg builds pressure and can explode.</p>
+            <summary>Reveal the answer and its two hidden facts</summary>
+            <div className="sample-answer-body">
+              <p className="answer-key"><strong>A is correct.</strong> It is the only continuation consistent with both local constraints.</p>
+              <div className="commonsense-facts">
+                <div>
+                  <span>Local fact 01 · Track construction</span>
+                  <p>China’s high-speed railway tracks are continuously welded, so there is almost no jolting inside the carriage even at high speeds.</p>
+                </div>
+                <div>
+                  <span>Local fact 02 · Timetabling</span>
+                  <p>In China, high-speed trains are generally very punctual.</p>
+                </div>
+              </div>
+              <p className="option-audit"><b>B</b> violates punctuality. <b>C</b> violates smooth running. <b>D</b> quietly violates both. Every option remains fluent; the failure is in what it implies.</p>
+            </div>
           </details>
         </article>
       </section>

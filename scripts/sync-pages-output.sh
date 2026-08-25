@@ -9,6 +9,11 @@ if [[ ! -f "$output_dir/index.html" ]]; then
   exit 1
 fi
 
+if [[ "$project_dir" == "/" || ! -f "$project_dir/package.json" ]]; then
+  echo "Refusing to sync outside the project directory." >&2
+  exit 1
+fi
+
 cp "$output_dir/index.html" "$project_dir/index.html"
 cp "$output_dir/404.html" "$project_dir/404.html"
 cp "$output_dir/og.png" "$project_dir/og.png"
@@ -19,8 +24,8 @@ for text_file in "$output_dir"/*.txt; do
 done
 
 mkdir -p "$project_dir/_next" "$project_dir/_not-found" "$project_dir/figures"
-cp -R "$output_dir/_next/." "$project_dir/_next/"
-cp -R "$output_dir/_not-found/." "$project_dir/_not-found/"
-cp -R "$output_dir/figures/." "$project_dir/figures/"
+rsync -a --delete "$output_dir/_next/" "$project_dir/_next/"
+rsync -a --delete "$output_dir/_not-found/" "$project_dir/_not-found/"
+rsync -a --delete "$output_dir/figures/" "$project_dir/figures/"
 
 echo "GitHub Pages export synced to the repository root."
