@@ -51,8 +51,8 @@ const languageCloud = [
 ];
 
 const authors = [
-  'Wenhan Han¹', 'Yifan Zhang²', 'Binbin Liu³', 'Mykola Pechenizkiy¹',
-  'Yin Zheng³', 'Meng Fang⁴˒¹',
+  'Wenhan Han¹', 'Yifan Zhang²', 'Binbin Liu²', 'Mykola Pechenizkiy¹',
+  'Yin Zheng²', 'Meng Fang³˒¹',
 ];
 
 export default function Home() {
@@ -317,8 +317,8 @@ export default function Home() {
             {authors.map((author) => <span key={author}>{author}</span>)}
           </div>
           <p className="affiliations">
-            ¹ Eindhoven University of Technology · ² Nanjing University ·
-            ³ Tsinghua University · ⁴ University of Liverpool
+            ¹ Eindhoven University of Technology · ² ByteDance ·
+            ³ University of Liverpool
           </p>
           <div className="paper-actions">
             <a className="button button-primary" href="/hellaswagultra-paper.pdf">Download paper <span aria-hidden="true">↓</span></a>
